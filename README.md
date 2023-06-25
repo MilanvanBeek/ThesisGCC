@@ -1,6 +1,5 @@
 ## README
 
-# README
 
 In 'Data' the colours per pattern derived from literature (see chapter 4.4) are listed, as well as the original annotations and calculations.
 
