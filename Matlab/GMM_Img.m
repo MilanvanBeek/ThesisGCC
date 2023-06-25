@@ -3,10 +3,6 @@
 
 img = imread('1354IllumnGray.jpg');
 
-%% Load Generated colours
-
-cols = readmatrix('coloursGaussian.xlsx')
-
 %% Load segmented version of image
 
 [~, ~, alpha] = imread('1354.jpg'); % read image, colour & alpha value
@@ -39,6 +35,7 @@ gmfit = fitgmdist(X,k);
 
 disp('Mean point is: ');
 disp(gmfit.mu);
+% get the mean to cluster in the last step
 mean = gmfit.mu;
 numIter = gmfit.NumIterations;
 
@@ -65,8 +62,8 @@ ylabel('Green');
 zlabel('Blue');
 
 %%
-
-point = mean;
+point = [187.9009,190.6919,181.9986]
+%point = mean;
 clusterIndexNewPoint = cluster(gmmModelBaseColours, point); % 
 
 % Compare clusterIndexNewPoint with clusterIndexBaseColours to retrieve the
